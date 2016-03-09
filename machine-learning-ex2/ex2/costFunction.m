@@ -21,7 +21,11 @@ grad = zeros(size(theta));
 %
 
 
+J = sum((log(sigmoid(X * theta)) .* -y) - (log(1 - sigmoid(X * theta)) .* (1- y)))/length(X);
 
+
+
+grad = sum(diag(sigmoid(X * theta) - y) * X) / length(X);
 
 
 
