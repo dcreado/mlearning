@@ -20,12 +20,15 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+Xsize = size(X);
+rows = Xsize(1);
 
-J = sum((log(sigmoid(X * theta)) .* -y) - (log(1 - sigmoid(X * theta)) .* (1- y)))/length(X);
+
+J = sum((log(sigmoid(X * theta)) .* -y) - (log(1 - sigmoid(X * theta)) .* (1- y)))/rows;
 
 
 
-grad = sum(diag(sigmoid(X * theta) - y) * X) / length(X);
+grad = sum(diag(sigmoid(X * theta) - y) * X) / rows;
 
 
 
