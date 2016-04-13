@@ -28,7 +28,7 @@ for i=1:size(X,1)
     if max_distance > curr_dist
       idx(i) = j;
       max_distance = curr_dist;
-    endif
+    end
   end
 end
 
