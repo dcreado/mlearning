@@ -27,8 +27,8 @@ centroids_count = zeros(K);
 %
 
 for i=1:m
-  centroids(idx(i),:) += X(i,:);
-  centroids_count(idx(i)) += 1;
+  centroids(idx(i),:) = centroids(idx(i),:) + X(i,:);
+  centroids_count(idx(i)) = centroids_count(idx(i)) + 1;
 end
 
 for i=1:K
